@@ -6,8 +6,8 @@ class CreateArticles < ActiveRecord::Migration[5.2]
       t.datetime :created_at
       t.datetime :updated_at
 
-      validate :title, prescence: true, length: {minimum: 3, maximum: 50}
-      validate :description, prescence:true, length: {minimum: 3, maximum: 50}
+      validates :title, prescence: true, length: {minimum: 3, maximum: 50}
+      validates :description, prescence:true, length: {minimum: 3, maximum: 50}
 
     end
   end
