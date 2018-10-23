@@ -1,3 +1,69 @@
 $navbar-default-bg: #08088A;
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: white;
+  text-transform: lowercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: white;
+  text-decoration: none;
+}
+
+#main-container {
+  margin-top: 5vw;
+}
+
+.center {
+  text-align: center;
+}
+
+.jumbotron {
+  background-image: asset-url('background.png');
+  background-size: cover;
+  height: 550px;
+}
+
+.jumbotron h1 {
+  color: white;
+  margin-top: 1vh;
+  font-weight: bold;
+  letter-spacing: 0.6vw;
+  font-size: 6vw;
+}
+
+.btn-xlarge {
+  font-size: 1.7em;
+}
+
+.footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+.footer a:hover {
+  color: #222;
+}
+
+.footer small {
+  float: left;
+}
+
+.footer ul {
+  float: right;
+  list-style: none;
+}
+
+.footer ul li {
+  float: left;
+  margin-left: 15px;
+}
+
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
