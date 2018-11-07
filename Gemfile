@@ -8,6 +8,8 @@ gem 'rails', '~> 5.2.1'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 
+gem 'bcrypt', '~> 3.1.7'
+
 # Bootstrap
 gem 'bootstrap', '~> 4.1.3'
 gem 'sprockets-rails', :require => 'sprockets/railtie'

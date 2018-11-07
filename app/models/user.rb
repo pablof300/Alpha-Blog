@@ -14,4 +14,7 @@ class User < ApplicationRecord
   presence: true,
   format: { with: EMAIL_REGEX, message: "Your email is invalid" },
   length: { minimum: 3, maximum: 50}
+
+  has_secure_password
+
 end
