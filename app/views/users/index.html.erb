@@ -1,4 +1,7 @@
 <h1 align='center'>All Alpha Bloggers</h1>
+<div align="center" class="row col-sm-6 offset-sm-5">
+  <%= will_paginate :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer %>
+</div>
 <div align="center">
   <% @users.each do |user| %>
     <ul class="listing">
