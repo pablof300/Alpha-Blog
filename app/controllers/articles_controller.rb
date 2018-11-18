@@ -1,12 +1,14 @@
 class ArticlesController < ApplicationController
-
   before_action :set_article, only: [:edit, :show, :destroy, :update]
+  before_action :require_user, except: [:index, :show]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def new
     @article = Article.new
   end
 
   def edit
+
   end
 
   def index
@@ -43,14 +45,19 @@ class ArticlesController < ApplicationController
   end
 
   private
-    def set_article
-      @article = Article.find(params[:id])
-    end
+  def set_article
+    @article = Article.find(params[:id])
+  end
 
-# puts params[:first_param] -> 'cat'
+  def article_params
+    params.require(:article).permit(:title, :description)
+  end
 
-    def article_params
-      params.require(:article).permit(:title, :description)
+  def require_same_user
+    if current_user != @article.user
+      flash[:danger] = "You can only edit or delete your own article"
+      redirect_to root_path
     end
+  end
 
 end
