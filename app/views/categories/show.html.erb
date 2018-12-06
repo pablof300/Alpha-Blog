@@ -1,6 +1,11 @@
 <h1 align="center"><%= "Category: #{@category.name}" %></h1>
+<% if logged_in? and current_user.admin? %>
+  <div class="row col-sm-2 offset-sm-5" style="padding-bottom: 30px;">
+    <span class="badge col"><%= link_to 'Edit Category Name', edit_category_path(@category) %></span>
+  </div>
+<% end %>
 <div align="center" class="row col-sm-6 offset-sm-5">
-  <%= will_paginate @category_articles, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer %>
+  <%= will_paginate @category_articles, page_links: false, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer %>
 </div>
 <%= render 'articles/article', obj: @category_articles %>
 <div align="center" class="row col-sm-12 offset-sm-5">
